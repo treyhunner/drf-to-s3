@@ -100,7 +100,7 @@ class FineTest(LiveServerTestCase):
     def create_driver(cls):
         remote = os.environ.get('CI', False) or os.environ.get('WITH_SAUCE', False)
         if remote:
-            print 'Using Sauce Labs'
+            print('Using Sauce Labs')
             capabilities = webdriver.DesiredCapabilities.CHROME
             capabilities['platform'] = 'Windows 8'
             capabilities['version'] = '31'
@@ -130,5 +130,5 @@ class FineTest(LiveServerTestCase):
 
         list_item = upload_page.get_file_list_item(0)
         self.assertIn('qq-upload-success', list_item.get_attribute('class'))
-        print 'Looks good.'
+        print('Looks good.')
         time.sleep(2) # Show off the results

@@ -103,7 +103,7 @@ class TestXHR(LiveServerTestCase):
     def create_driver(cls):
         remote = os.environ.get('CI', False) or os.environ.get('WITH_SAUCE', False)
         if remote:
-            print 'Using Sauce Labs'
+            print('Using Sauce Labs')
             capabilities = webdriver.DesiredCapabilities.CHROME
             capabilities['platform'] = 'Windows 8'
             capabilities['version'] = '31'
@@ -134,5 +134,5 @@ class TestXHR(LiveServerTestCase):
         for result in upload_page.results:
             self.assertEqual(result.text, 'Pass!', result.get_attribute('id'))
 
-        print 'Looks good.'
+        print('Looks good.')
         time.sleep(2) # Show off the results
